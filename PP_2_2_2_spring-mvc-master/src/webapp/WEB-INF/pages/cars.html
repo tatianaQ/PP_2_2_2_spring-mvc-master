@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>List of auto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        .car-info {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .car-info p {
+            margin: 0;
+        }
+        .car-info span {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>List of auto</h1>
+    <div th:each="car : ${cars}" class="car-info">
+        <p>
+            <span>Model:</span>
+            <span th:text="${car.getModel()}"></span>
+            <span>, </span>
+            <span>Color:</span>
+            <span th:text="${car.getColor()}"></span>
+            <span>, </span>
+            <span>Year:</span>
+            <span th:text="${car.getYear()}"></span>
+        </p>
+    </div>
+</div>
+</body>
+</html>
